@@ -1,7 +1,7 @@
 #一键生成ios、安卓各尺寸图标和截屏
 一键生成苹果各尺寸的截图和图标
 
-一键生成安卓图标
+一键生成安卓各尺寸图标和截图
 
 ![生成图标](http://git.oschina.net/uploads/images/2016/0523/150743_b2143012_346253.jpeg "生成ios图标")
 
@@ -18,11 +18,13 @@ tool.py 操作 [文件名] [平台名]
     文件名：图标文件名
     平台名：ios 或 android
 
-例如生成ios的图标：tool.py icon icon.jpg ios
+例如生成ios的图标：python tool.py icon icon.jpg ios
 
-例如生成安卓的图标：tool.py icon icon.jpg android
+例如生成安卓的图标：python tool.py icon icon.jpg android
 
-例如生成ios的截屏：tool.py screenshot
+例如生成ios的截屏：python tool.py screenshot ios
+
+例如生成安卓截屏：python tool.py screenshot android
 
 #注意
 需要一张mask.png用于裁剪安卓图标，建议使用512*512px，圆角为70px
