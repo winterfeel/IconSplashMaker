@@ -7,11 +7,14 @@ import sys
 from PIL import Image
 
 iosSizes = ['27@1x','27@2x','27@3x','40@1x','40@2x','40@3x','60@1x','60@2x','60@3x','76@1x','76@2x','167@1x']
-androidSizes = [36,48,72,96,144,192]
+androidSizes = [32,48,72,96,144,192]
 androidNames = ['ldpi','mdpi','hdpi','xhdpi','xxhdpi','xxxhdpi']
 
-sizes = [(640,960),(640, 1136),(750, 1334),(1242, 2208),(1536, 2048),(2048, 2732)]
-folders = ['iPhone4s','iPhone5','iPhone6','iPhone6plus','iPad','iPadLarge']
+sizesiOS = [(640,960),(640, 1136),(750, 1334),(1242, 2208),(1536, 2048),(2048, 2732)]
+foldersiOS = ['iPhone4s','iPhone5','iPhone6','iPhone6plus','iPad','iPadLarge']
+
+sizesAndroid = [(480,800),(720,1280),(1080,1920)]
+foldersAndroid = ['480x800','720x1280','1080x1920']
 
 def processIcon(filename,platform):
 	icon = Image.open(filename).convert("RGBA")
@@ -40,17 +43,22 @@ def processIcon(filename,platform):
 			im.save('iosIcon/icon'+size+'.png')
 	print 'Congratulations!It\'s all done!'
 
-def walk_dir(dir):
+def walk_dir(dir,platform):
 	files = os.listdir(dir)
 	for name in files:
 		if name.split('.')[-1] == 'jpg' or name.split('.')[-1] == 'png':#处理jpg和png
-			produceImage(name)
+			produceImage(name,platform)
 	print 'Congratulations!It\'s all done!'
 
-def produceImage(filename):
+def produceImage(filename,platform):
 	print 'Processing:' + filename
 	img = Image.open(filename)
 	index = 0
+	sizes = sizesiOS
+	folders = foldersiOS
+	if platform == 'android':#默认ios，如果是安卓
+		sizes = sizesAndroid
+		folders = foldersAndroid
 	for size in sizes:
 		if not os.path.isdir(folders[index]):
 			os.mkdir(folders[index])
@@ -64,7 +72,13 @@ def produceImage(filename):
 
 action = sys.argv[1]#action:icon or screenshot
 if action == 'screenshot':	
-	walk_dir('./')
+	platform = sys.argv[2]#platform
+	if platform == 'ios':
+		walk_dir('./','ios')
+	elif platform == 'android':
+		walk_dir('./','android')
+	else:
+		print 'Hey,Platform can only be "ios" or "android" !'
 elif action == 'icon':
 	filename = sys.argv[2]#image filename
 	platform = sys.argv[3]#platform
