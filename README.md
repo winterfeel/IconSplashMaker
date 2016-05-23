@@ -2,6 +2,8 @@
 一键生成苹果各尺寸的截图和图标
 
 一键生成安卓图标
+![生成图标](http://git.oschina.net/uploads/images/2016/0523/150743_b2143012_346253.jpeg "生成ios图标")
+![生成截图](http://git.oschina.net/uploads/images/2016/0523/150803_3ba8e5e3_346253.jpeg "生成ios截图")
 
 #运行环境
 Python 2.7
