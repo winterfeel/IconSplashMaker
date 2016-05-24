@@ -6,7 +6,7 @@ import os
 import sys
 from PIL import Image
 
-iosSizes = ['27@1x','27@2x','27@3x','40@1x','40@2x','40@3x','60@1x','60@2x','60@3x','76@1x','76@2x','167@1x']
+iosSizes = ['29@1x','29@2x','29@3x','40@1x','40@2x','40@3x','60@1x','60@2x','60@3x','76@1x','76@2x','167@1x']
 androidSizes = [32,48,72,96,144,192]
 androidNames = ['ldpi','mdpi','hdpi','xhdpi','xxhdpi','xxxhdpi']
 
