@@ -1,12 +1,14 @@
 #encoding=utf-8
 #by 不灭的小灯灯
-#date 2016/5/22
+#create date 2016/5/22
+#update 2016/9/21
+#support iOS 10
 #site www.winterfeel.com
 import os
 import sys
 from PIL import Image
 
-iosSizes = ['29@1x','29@2x','29@3x','40@1x','40@2x','40@3x','60@1x','60@2x','60@3x','76@1x','76@2x','167@1x']
+iosSizes = ['20@1x','20@2x','20@3x','29@1x','29@2x','29@3x','40@1x','40@2x','40@3x','60@2x','60@3x','60@3x','76@1x','76@2x','167@1x']
 androidSizes = [32,48,72,96,144,192]
 androidNames = ['ldpi','mdpi','hdpi','xhdpi','xxhdpi','xxxhdpi']
 
