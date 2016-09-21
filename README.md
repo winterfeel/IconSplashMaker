@@ -1,40 +1,45 @@
-#一键生成ios、安卓各尺寸图标和截屏
-一键生成苹果各尺寸的截图和图标
+#Script to generate icons and splash for iOS/Android
+##Introduction
+Hey guys! It's a python script to generate icons and screenshots for iOS and Android Apps. 
 
-一键生成安卓各尺寸图标和截图
+Check this,you will find out what we do.
+![demo](https://github.com/winterfeel/IconSplashMaker/blob/master/demo.png "demo")
 
-![生成图标](http://git.oschina.net/uploads/images/2016/0523/150743_b2143012_346253.jpeg "生成ios图标")
+Now we support iOS 10!
 
-![生成截图](http://git.oschina.net/uploads/images/2016/0523/150803_3ba8e5e3_346253.jpeg "生成ios截图")
-
-#运行环境
+##Environment
 Python 2.7
 
-安装PIL库
+PIL or Pillow
 
-#使用参数
-tool.py 操作 [文件名] [平台名]
-    操作：icon 或 screenshot
-    文件名：图标文件名
-    平台名：ios 或 android
+##How to use
+in command line or terminal:
+>python tool.py [action] [filename] [platform]
 
-例如生成ios的图标：python tool.py icon icon.jpg ios
+* action：icon or screenshot
+* filename：your icon filename(screenshot not needed)
+* platform：ios or android
 
-例如生成安卓的图标：python tool.py icon icon.jpg android
+Examples:
 
-例如生成ios的截屏：python tool.py screenshot ios
+>To generate iOS icon：python tool.py icon icon.jpg ios
 
-例如生成安卓截屏：python tool.py screenshot android
+>To generate Android icon：python tool.py icon icon.jpg android
 
-#注意
-需要一张mask.png用于裁剪安卓图标，建议使用512*512px，圆角为70px
+>To generate iOS screenshots：python tool.py screenshot ios
 
-生成截屏会遍历当前目录下所有jpg和png进行生成，并且自动判断横竖屏
+>To generate Android screenshots：python tool.py screenshot android
 
-ios图标默认不裁剪圆角，需要的可以自己改代码
+##Tips
+* You need to prepare a 'mask.png' to crop Android icon. It's size must be (512px,512px) and 70px cornerRadius.
 
-当前未加入安卓截屏，因为安卓变化多端，需要的可以自己加
+	Dont worry,we've already prepare one for you in GitHub.
 
-#作者的话
-我是个独立开发者，做了七八年了。最近才想起学学Python，学了两三天，写了这个脚本，类似的工具和脚本肯定也有，自己就写着玩玩，喜欢的可以拿去用，如果有更好的建议、更简单的代码，欢迎留言。
-winterfeel@qq.com
+* When you generate screenshots,the script will scan all JPG/PNG file in current folder,and you don't need to worry about the orientation.
+
+#About
+Hello,I'm Arsene,from China.
+
+I'm a individual full stack developer,I love evey kinds of codes,Ahahahahah...
+
+My Blog:[www.winterfeel.com ](www.winterfeel.com )
